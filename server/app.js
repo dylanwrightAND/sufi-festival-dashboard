@@ -11,6 +11,14 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use('/api', router);
 
 console.log('ENV VAR: ', process.env.EVENTBRITE_BASE_URL)
