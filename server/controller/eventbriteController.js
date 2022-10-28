@@ -1,4 +1,4 @@
-import { getAllEvents, getOrganisations } from '../services/eventbriteService.js'
+import { getAllEvents, getOrganisations, getAttendees } from '../services/eventbriteService.js'
 
 export const getEventDetails = async (req, res) => {
 
@@ -12,4 +12,10 @@ export const getAllOrganisations = async (req, res) => {
     const organizations = await getOrganisations();
 
     res.send(organizations);
+}
+
+export const getAllAttendees = async (req, res) => {
+    const attendees = await getAttendees(req.query.eventId)
+
+    res.send(attendees);
 }

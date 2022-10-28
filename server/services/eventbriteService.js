@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { response } from 'express';
 
 export const getAllEvents = async (organisationId) => {
 
@@ -37,4 +36,26 @@ export const getOrganisations = async () => {
     const response = await axios(organizationsUrl,  { params: { token: process.env.EVENTBRITE_API_TOKEN } });
 
     return response.data;
+}
+
+export const getAttendees = async (eventId) => {
+    const attendeesUrl = process.env.EVENTBRITE_BASE_URL + '/v3/events/' + eventId + '/attendees';
+    const response = await axios(attendeesUrl,  { params: { token: process.env.EVENTBRITE_API_TOKEN } });
+
+    console.log(response.data.attendees)
+
+    const promises = response.data.attendees.map(async attendee => {
+
+        return {
+            id: attendee.id,
+            name: attendee.profile.name,
+            email: attendee.profile.email,
+            barcodes: attendee.barcodes,
+            checked_in: attendee.checked_in
+        }});
+
+    const attendees = Promise.all(promises)
+
+return attendees;
+
 }
