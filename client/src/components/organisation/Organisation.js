@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  CCard,
-  CCardImage,
-  CCardBody,
-  CCardTitle,
-  CCardText,
-  CButton,
-} from '@coreui/react';
-import '@coreui/coreui/dist/css/coreui.min.css';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Organisation({ organisations }) {
   return (
@@ -17,17 +11,14 @@ export default function Organisation({ organisations }) {
       <ul>
         {organisations.map((o, index) => (
           <li key={`org-${index}`}>
-            <CCard style={{ width: '18rem' }}>
-              <CCardImage
-                orientation="top"
-                src="client/src/components/organisation/eventbrite.png"
-              />
-              <CCardBody>
-                <CCardTitle>{o.name}</CCardTitle>
-                <CCardText>{o.id}</CCardText>
-                <CButton href="#">Go somewhere</CButton>
-              </CCardBody>
-            </CCard>
+            <Card style={{ width: '18rem' }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>{o.name}</Card.Title>
+                <Card.Text>Eventbrite Organisation</Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
           </li>
         ))}
       </ul>
