@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/event', getEventDetails);
 router.get('/organisation', getAllOrganisations);
-router.get('/attendees', getAllAttendees);
+router.get('/attendee', getAllAttendees);
 
 export default router;
 
