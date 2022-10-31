@@ -5,7 +5,7 @@ import { Segment } from 'semantic-ui-react';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Attendees({ attendees }) {
+export default function Attendees({ attendees }: any) {
   console.log(attendees.length);
   return (
     <>
@@ -29,7 +29,7 @@ export default function Attendees({ attendees }) {
         </Table.Header>
 
         <Table.Body>
-          {attendees.map((a, index) => {
+          {attendees.map((a: any, index: number) => {
             return (
               <>
                 <Table.Row key={`attendee-${index}`}>
