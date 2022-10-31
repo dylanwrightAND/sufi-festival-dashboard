@@ -11,7 +11,7 @@ export default function Event({ events }) {
 
       {events.map((e, index) => (
         <Card key={`org-${index}`} style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="" alt="image" />
+          <Card.Img variant="top" src="/eventbrite.png" alt="image" />
           <Card.Body>
             <Card.Title>{e.name}</Card.Title>
             <Card.Text>

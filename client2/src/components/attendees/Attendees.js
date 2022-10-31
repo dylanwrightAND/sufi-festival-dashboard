@@ -1,14 +1,25 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Attendees({ attendees }) {
-  console.log(attendees);
+  console.log(attendees.length);
   return (
     <>
-      <h1>Attendees</h1>
+      <h1></h1>
+      <Segment.Group horizontal>
+        <Segment color="orange" padded="very">
+          Event Attendees: {attendees.length}
+        </Segment>
+        <Segment color="orange" padded="very">
+          Event Attendees: {attendees.length}
+        </Segment>
+      </Segment.Group>
 
-      <Table striped>
+      <Table striped color="orange">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
