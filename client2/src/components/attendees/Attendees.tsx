@@ -5,17 +5,20 @@ import { Segment } from 'semantic-ui-react';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Attendees({ attendees }: any) {
-  console.log(attendees.length);
+export default function Attendees({ attendees, event }: any) {
+  console.log(event);
   return (
     <>
       <h1></h1>
       <Segment.Group horizontal>
         <Segment color="orange" padded="very">
-          Event Attendees: {attendees.length}
+          Event Name: {event.name.text}
         </Segment>
         <Segment color="orange" padded="very">
           Event Attendees: {attendees.length}
+        </Segment>
+        <Segment color="orange" padded="very">
+          Event Capacity: {event.capacity}
         </Segment>
       </Segment.Group>
 
